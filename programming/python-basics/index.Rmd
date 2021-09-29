@@ -5,7 +5,8 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [references.bib]
-nocite: '@*'
+nocite: |
+  @van1995python
 link-citations: yes
 github-repo: nclJoshCowley/notebook
 ---

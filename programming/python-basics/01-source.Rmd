@@ -1,3 +1,5 @@
 # Source 
 
-Content to be added here.
+Most of the content from this chapter will arise from the referenced Udemy
+    course [@udemy2021] and module taught at Newcastle University, 
+    [@mas1803python2021], for which I have assisted.
