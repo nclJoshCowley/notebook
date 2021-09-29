@@ -1,0 +1,7 @@
+delete_merged_file: true
+output_dir: "_subsite"
+before_chapter_script: ["_global.R"]
+view: https://github.com/rstudio/bookdown-demo/blob/master/%s
+language:
+  ui:
+    chapter_name: "Chapter "
