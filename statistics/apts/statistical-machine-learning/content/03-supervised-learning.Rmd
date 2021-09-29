@@ -1,0 +1,90 @@
+# Supervised Learning
+
+
+
+## Notation
+
+The notation given in [@aslett2021] is consistent with the conventions the 
+    author is accustomed to and will not be repeated here.
+
+<!-- Potentially move this someplace more general? -->
+\newcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\mat}[1]{\mathbf{#1}}
+\newcommand{\vecg}[1]{\boldsymbol{#1}}
+\newcommand{\Pr}{\mathbb{P}}
+
+
+
+## Problem Setting
+
+We consider three problem types concerning supervised ML:
+
+1. **Regression**, outcome is quantitative, such as weight,
+1. **Classification**, outcome is qualitative, such as image recognition of a 
+    dog or cat,
+1. **Density Estimation**, models the distribution of the outcome.
+
+Supervised learning assumes we have some data of size $n$,
+
+\begin{equation}
+    \mathcal{D}
+        = \left(
+            (\vec{x}_1, y_1), \dots, (\vec{x}_n, y_n) 
+        \right) \subset (\mathcal{X} \times \mathcal{Y})^n
+    ,
+\end{equation}
+
+to learn from.
+Where we define $\mathcal{X}$ to be the space containing our $d$ dimensional
+    **predictors**, $\vec{x}_i = (x_{i1}, \dots, x_{id})^T$.
+$\mathcal{Y}$ is the space containing our **outcomes**, that is dependent on 
+    the type of problem (regression implies $\mathcal{Y} \subset \mathbb{R}$).
+    
+Given these data, we make a further assumption by specifying a *model* that 
+    defines some relationship and uncertainty.
+    
+In regression,
+
+\begin{equation}
+    Y 
+        = f(x) + \epsilon
+    ,
+\end{equation}
+
+where $\epsilon$ is a random error term (zero mean assumed) and $f(x)$ is 
+    the conditional expectation, $f(x) = \mathbb{E}[Y | X = \vec{x}]$.
+
+In other settings, this may take on other forms such as a 
+    *probabilistic classifier*,
+    
+\begin{equation}
+    (Y | X = \vec{x})
+        \sim \text{Categorical} \big(
+            (p_1, \dots, p_g) = f(\vec{x}) 
+        \big)
+    ,
+\end{equation}
+
+where we take $f: \mathcal{X} \to [0,1]^g$, $\text{Categorical}$ to be some 
+    categorical distribution and define $p_i = \Pr(Y = i | X = \vec{x})$ to be
+    on the simplex $\left( \sum_i p_i = 1 \right)$.
+
+::::{.definition name="Probability Measure"}
+We typically assume that each observation $(\vec{x}_i, y_i)$ is an i.i.d. 
+    realisation from some **true** but **unknown** probability measure 
+    denoted $\pi_{XY}$.
+::::
+    
+Our task is thus, we have access to some predictors, $\vec{x}$, but not $y$.
+    We want to predict these $y$ values with a model but, importantly, the model
+    needs to generalise well to unseen data.
+    
+This is because we are interested in a *random input* setting. That is,
+
+- *fixed input* setting assumes $X$ fixed and aims to explain the randomness
+  in $Y$,
+- *random input* setting attempts to explain randomness of $X$ and $Y$, that is,
+  make predictions at unknown future values of $X$.
+
+
+## Loss Functions
