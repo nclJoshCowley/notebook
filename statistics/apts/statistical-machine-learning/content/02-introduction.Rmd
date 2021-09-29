@@ -1,0 +1,22 @@
+# Introduction
+
+## Motivation
+
+Both statistics and machine learning (ML) are closely related and yet have 
+    distinct differences. 
+In these notes, we consider ML to be a set of methods, often involving 
+    algorithmic black-box techniques that are primarily focused on the task of
+    prediction. Whereas statistics is broader and can focus on other concepts
+    such as parameter estimation and explanatory modelling.
+
+## Overview
+
+Consider the following as a general overview of each chapter.
+    
+- Chapter 3: Supervised Learning does x
+- Chapter 4: Local Methods does x
+- Chapter 5: Error Estimation and Model Selection does x
+- Chapter 6: Trees, Forests & Boosting does x
+- Chapter 7: Model Assessment and Combination does x
+- Chapter 8: ML Pipelines does x
+
