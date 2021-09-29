@@ -21,4 +21,5 @@ render_sub_book <- function(path, shared = "_shared") {
 # Chapters currently in progress
 
 render_sub_book("statistics/apts/statistical-machine-learning/")
+
 render_sub_book("programming/python-basics")
