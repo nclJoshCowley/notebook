@@ -29,6 +29,7 @@ knitr::opts_chunk$set(
 # - Control options
 
 knitr::opts_chunk$set(
+  comment = ">",
   echo = FALSE,
   message = FALSE,
   cache = FALSE
