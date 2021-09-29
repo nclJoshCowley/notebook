@@ -1,0 +1,163 @@
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Basics 
+
+We assume simple capabilities such as variable assignment and mathematical 
+    operations but remind the reader of the following syntax.
+  
+**Concatenation**
+
+```{python}
+"Hello" + ' ' + '''World'''
+```
+
+(Also note the three ways of specifiyng a string).
+
+**Exponent**
+    
+```{python}
+x = 2
+print(x ** 3)
+```
+
+**Modulo**
+
+```{python}
+y = 20
+print(y % 3)
+```
+
+## Data Structures
+
+The following table summarises key data types for use in python.
+
+| Name            | Syntax                    | Details
+| :-------------: | :-------------------:     | :--:
+| Boolean         | `True` or `False`         |
+| Integers        | `23`                      |
+| Floating point  | `3.14`                    |
+| String          | `"Hello"`                 |
+| List            | `[23, 3.14, "Hello"]`     | ordered
+| Tuple           | `(23, 3.14, "Hello")`     | ordered; immutable
+| Dictionary      | `{13: "Ace", 12: "King"}` | unordered;  key-value pairs
+| Sets            | `{"a", "b"}`              | unordered; unique
+
+## Indexing and Slicing
+
+The idea of slicing below will be applied to strings but can also be extended 
+    to other objects such as lists.
+    
+Note that Python will start any index at 0 and we can also access elements 
+    using a reverse index.
+    
+| Elements  | Index | Reverse Index
+| :--:      | :--:  | :--:
+| h         | 0     | 0
+| e         | 1     | -4
+| l         | 2     | -3
+| l         | 3     | -2
+| o         | 4     | -1
+
+```{python}
+'hello'[4]
+'hello'[-1]
+```
+
+The syntax for slicing is `[start:stop:step]` where care must be taken as `stop`
+    denotes the index the subset should go up to **but not include**.
+    
+```{python}
+# Extracts [1], [3] but does not include [5] 
+'abcdef'[1:5:2]
+```
+
+```{python}
+# Extracts [1], [3] and [5] 
+'abcdef'[1:6:2]
+```
+
+Default options for slicing exist so omitting them is possible. The defaults 
+    are intuitively the start and end for `start` and `stop` and `step` 
+    defaults to 1.
+
+```{python}
+'abcdef'[2:   ] # <=> 'abcdef'[2:6:1]
+'abcdef'[ : :2] # <=> 'abcdef'[0:6:1]
+'abcdef'[ :3:2] # <=> 'abcdef'[0:3:2]
+```
+
+## Methods Introduction
+
+We make clear the distinction that a **function** is a callable object that 
+    takes some arguments and produces some output.
+A method is a function that is associated with some instance of class, 
+    referred to as an object.
+    
+Hence, in the following example:
+
+- `'abcdef'` is an object of type *string* (`str`),
+  - *string* is a class that is defined in base Python,
+- `.upper` is a method that can be called on said object,
+  - the method is called via `upper()` and the result is returned,
+- `print(...)` is callable with no class and is called a function.
+    
+```{python}
+print('abcdef'.upper)
+print('abcdef'.upper())
+```
+
+There are a variety of methods that can be called on a string object with 
+    varying number of arguments, other examples include:
+
+```{python}
+'abcedf'.split('c')
+```
+
+```{python results = "hide"}
+'abcedf'.endswith('f') # True
+'abcedf'.endswith('F') # False
+```
+
+## Strings
+
+There are two main ways of formatting strings for printing.
+
+**format()**
+
+```{python}
+print('{h} {w}!'.format(h = 'Hello', w = 'World'))
+```
+
+Floats are dealt with via `value:width.precision` where `precision` is 
+    the **decimal place to round to**.
+
+```{python}
+print('Float - {pi:10.3f}'.format(pi = 3.141592654))
+```
+
+**f strings**
+
+Achieved by prefixing a string with an *f*.
+
+```{python}
+h = 'Hello'
+print(f'{h} there')
+```
+
+Floats are dealt with via `{value:{width}.{precision}}` where `precision` is 
+    the **total number of digits**.
+    
+```{python}
+pi = 3.141592654
+print(f'Float - {pi:{10}.{4}}')
+```
+
+## Lists
+
+## Tuples
+
+## Dictionaries
+
+## Sets
