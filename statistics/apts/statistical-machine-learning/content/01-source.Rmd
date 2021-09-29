@@ -1,0 +1,14 @@
+# Source 
+
+These notes summarise the Academy for PhD Training in Statistics (APTS)
+    module "Statistical Machine Learning" taught by Louis J.M. Aslett
+    from 13th to 17th September 2021.
+
+Course notes are referenced below with a website given, [@aslett2021].
+
+Module aims to give a broad overview of statistical machine learning methods to 
+    PhD candidates who already have a good understanding and intuition of
+    statistics.
+    
+The chapters in this document reflect the chapters in the source material
+    for easier further reading and comparing.
