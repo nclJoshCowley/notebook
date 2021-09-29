@@ -1,0 +1,18 @@
+--- 
+title: "Statistical Machine Learning (APTS 2021)"
+author: "Josh Cowley"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [references.bib]
+link-citations: yes
+github-repo: nclJoshCowley/notebook
+---
+
+# Preface {-}
+
+This document contains the notes relating to the Statistical Machine Learning
+    APTS module.
+
+<p style="font-weight:600; font-size:36px">References</p>
+<div id="refs"></div>
